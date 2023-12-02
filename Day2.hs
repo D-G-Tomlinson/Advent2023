@@ -41,8 +41,8 @@ part2 = do
             getLineVal :: String -> Int 
             getLineVal gl = r * g *b
               where
-                (_:consider:[]) = splitOn ": " gl
-                pairs        = (joinNumColour (filter (not.null) (splitOneOf ", " consider)))
+                [_,consider] = splitOn ": " gl
+                pairs        = joinNumColour (filter (not.null) (splitOneOf ", " consider))
                   where
                     joinNumColour :: [String] -> [(Int, Char)]
                     joinNumColour []          = []
