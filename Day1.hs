@@ -1,13 +1,13 @@
 import Data.Char
 import System.IO
 
-day1Part1 :: IO ()
-day1Part1 = do
-  answer <- dod1p1
+part1 :: IO ()
+part1 = do
+  answer <- doP1
   print answer
   where
-    dod1p1 :: IO Int
-    dod1p1 = do
+    doP1 :: IO Int
+    doP1 = do
       file <- readFile "textFiles/day1"
       return (sum (map findNum (lines file)))
         where
@@ -24,13 +24,13 @@ day1Part1 = do
               digitval :: Char -> Int
               digitval n = ord n - 48
 
-day1Part2 :: IO ()
-day1Part2 = do
-  answer <- dod1p2
+part2 :: IO ()
+part2 = do
+  answer <- doP2
   print answer
   where
-    dod1p2 :: IO Int
-    dod1p2 = do
+    doP2 :: IO Int
+    doP2 = do
       file <- readFile "textFiles/day1"
       return (sum (map findNum (lines file)))
         where
