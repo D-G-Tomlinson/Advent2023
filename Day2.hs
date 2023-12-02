@@ -11,10 +11,10 @@ part1 = do
         fileText <- readFile "textFiles/day2"
         return (foldl (\a b -> a + getLineVal b) 0 (lines fileText))
           where
-            getLineVal :: String -> Int --0 or ID value
+            getLineVal :: String -> Int
             getLineVal gl
                    | all checkRound (splitOn "; " rest) = id
-                   | otherwise                         = 0
+                   | otherwise                          = 0
               where
                 ['G':'a':'m':'e':num,rest] = splitOn ": " gl
                 id = read num
